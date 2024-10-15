@@ -30,9 +30,9 @@ export class NewBookComponent implements OnDestroy, AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
-    console.log(
+    /*     console.log(
       this.interactivityChecker.isFocusable(this.inputElementRef.nativeElement)
-    );
+    ); */
   }
 
   ngOnDestroy(): void {
