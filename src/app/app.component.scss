@@ -1,0 +1,88 @@
+@import "../styles.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+}
+
+/* Style the header */
+header {
+  width: 100%;
+  background-color: $primary-color-invert;
+  padding: $xs-spacing;
+  vertical-align: middle;
+
+  background-image: url(../assets/background-header.svg); //https://app.heazy.studio
+}
+
+.visible-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column: 2;
+  align-content: center;
+
+  .logo__text {
+    font-size: min($m-font, 6vw);
+    font-weight: bold;
+  }
+}
+
+header .logo img {
+  grid-column: 1;
+  max-width: $m-spacing;
+  min-width: $s-spacing;
+  align-self: center;
+  justify-self: end;
+  text-align: right;
+  padding-right: $xs-spacing;
+}
+
+/* tablet breakpoint */
+@media screen and (max-width: $tablet) {
+  main {
+    padding: 10rem $xs-spacing;
+  }
+
+  footer .footer__links {
+    margin-bottom: $xs-spacing;
+  }
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column: 2;
+}
+
+header .logo img {
+  grid-column: 1;
+  max-width: $m-spacing;
+  min-width: $s-spacing;
+  align-self: center;
+  justify-self: end;
+  text-align: right;
+  padding-right: $xs-spacing;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: $s-spacing $m-spacing;
+  background-image: url(./../assets/background-main.svg); //https://app.heazy.studio
+}
+
+/* Responsive design */
+@media screen and (max-width: $tablet) {
+  main {
+    padding: $xxs-spacing $xs-spacing;
+  }
+}

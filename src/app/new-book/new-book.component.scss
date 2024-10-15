@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+
+form {
+  margin: 0 auto;
+  max-width: 25rem;
+}
+
+.form-field {
+  display: block;
+  margin-top: 1rem;
+
+  > span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+input {
+  padding: 12px 20px 12px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-field-hint {
+  display: block;
+  color: #3c3c3c;
+}
+
+.form-actions {
+  margin-top: 1rem;
+}
+
+button[type="submit"] {
+  background-color: $primary-color-invert;
+  color: $primary-color;
+  border: solid 3px $primary-color;
+  padding: $xxs-spacing;
+  width: 100%;
+  height: $m-spacing;
+  font-size: $s-font;
+  margin-top: $xs-spacing;
+
+  &:hover {
+    background-color: $background-light;
+  }
+
+  &:disabled {
+    background-color: $primary-color-invert;
+    border: solid 3px $background-light;
+  }
+}

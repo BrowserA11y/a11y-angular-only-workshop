@@ -1,0 +1,137 @@
+/* Colors */
+$primary-color: black;
+$primary-color-invert: white;
+$secondary-color: #114446;
+$background-light: #ffcb9a;
+$backgrond-light-secondary: #d1e8e2;
+$focus-ring: #aa00ff;
+
+/* Media breack points */
+$mobile: 480px;
+$tablet: 768px;
+
+/* Spacing */
+$xxs-spacing: 0.5rem;
+$xs-spacing: 1.5rem;
+$s-spacing: 3rem;
+$m-spacing: 5rem;
+
+/* Font sizes */
+$xs-font: 1.2rem;
+$s-font: 1.4rem;
+$m-font: 1.6rem;
+
+*:focus-visible {
+  outline: 3px solid $focus-ring;
+}
+
+h1 {
+  font-size: $m-font;
+}
+
+h2 {
+  font-size: $s-font;
+}
+
+h3 {
+  font-size: $xs-font;
+}
+
+/* Empty space scheme */
+/* Components */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+/* Style the footer */
+footer {
+  color: $primary-color-invert;
+  flex-shrink: 0;
+  background-color: $secondary-color;
+  font-size: 0.8rem;
+  grid-row: 3;
+  margin-top: auto;
+
+  a {
+    color: $primary-color-invert;
+  }
+}
+
+footer .footer__imprint {
+  padding: $xs-spacing;
+}
+
+footer .footer__links {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.8rem;
+  justify-content: center;
+
+  a {
+    justify-self: center;
+  }
+}
+
+footer .footer__imprint .footer__right {
+  text-align: right;
+  margin: 0;
+}
+footer .footer--icon {
+  width: 2rem;
+  fill: $primary-color-invert;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: $tablet) {
+  footer .footer__links {
+    margin-bottom: $xs-spacing;
+  }
+}
+
+/* tablet breakpoint */
+@media (min-width: $tablet) {
+  footer .footer__imprint {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  footer .footer__imprint .footer__links {
+    grid-column: 1;
+  }
+
+  footer .footer__imprint .footer__right {
+    grid-column: 2;
+  }
+
+  footer .footer__links {
+    justify-content: left;
+  }
+}
+
+@media (forced-colors: active) {
+  footer .footer--icon {
+    fill: $primary-color;
+  }
+}

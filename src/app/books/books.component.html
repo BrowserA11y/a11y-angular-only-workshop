@@ -1,0 +1,8 @@
+<h1>Our books</h1>
+<div class="books">
+  @for (book of books; track book; let i = $index) {
+  <app-book-item [id]="i" [book]="book" (bookRemoved)="removeBook(book, i)">
+  </app-book-item>
+  }
+</div>
+<a class="about_us" routerLink="/about">Learn about us</a>

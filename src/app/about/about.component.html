@@ -1,0 +1,63 @@
+<div class="mission_text">
+  <h1>About us</h1>
+  <p>
+    At Accessible Reads, we believe that everyone should have access to the joy
+    of reading, regardless of their abilities. Our mission is to promote
+    accessibility by offering a wide selection of books in various formats,
+    including large print, braille, audio, and e-books. We strive to support
+    people with disabilities by making reading fun and inclusive for everyone.
+  </p>
+  <p>
+    We are committed to providing a welcoming and accessible environment for all
+    of our customers. Our knowledgeable staff is always ready to assist with any
+    special needs or requests, and we work closely with publishers to ensure
+    that our selection of books reflects the diverse needs and interests of our
+    community.
+  </p>
+  <p>
+    At Accessible Reads, we believe that reading is not only a source of
+    entertainment and education, but also a way to promote understanding and
+    empathy. By promoting accessibility and making reading fun for everyone, we
+    hope to create a more inclusive and compassionate society.
+  </p>
+</div>
+@if (bookStats$ | async; as bookStats) {
+<table>
+  <caption class="visually-hidden">
+    Statistics regarding our book collection
+  </caption>
+  <tbody>
+    <tr>
+      <th scope="row">Number of books:</th>
+      <td>{{ bookStats.numberOfBooks }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Number of authors:</th>
+      <td>{{ bookStats.numberOfAuthors }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Number of publishers:</th>
+      <td>{{ bookStats.numberOfPublishers }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Number of book pages:</th>
+      <td>{{ bookStats.numberOfPages | number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Overall book value:</th>
+      <td>{{ bookStats.value | number : ".2" }} $</td>
+    </tr>
+  </tbody>
+</table>
+}
+<div class="mission_video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/PihRANrP9o8?disablekb=1&cc_load_policy=1"
+    title="YouTube video from Centre for Equitable Library Access describing what an accessible book is."
+    frameborder="0"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<a class="mission_books" routerLink="/books">View our books </a>

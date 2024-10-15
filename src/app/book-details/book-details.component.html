@@ -1,0 +1,37 @@
+@if (book$ | async; as book) {
+  <div class="book-insights">
+    <div>
+      <h1>
+        {{ book.title }}
+      </h1>
+      <h2>ISBN - {{ book.isbn }}</h2>
+      <p>
+        {{ book.abstract }}
+        <i>{{ book.author }}</i>
+      </p>
+    </div>
+    <div>
+      <img [src]="book.cover" alt="" />
+    </div>
+  </div>
+  <!--https://dev.to/grahamthedev/5-star-rating-system-actually-accessible-no-js-no-wai-aria-3idl-->
+  <!--https://jsfiddle.net/s0c35pqw/-->
+  <!--Alternative: https://www.w3.org/WAI/tutorials/forms/custom-controls/-->
+  <fieldset class="star-rating">
+    <legend>Rate this book:</legend>
+    <div>
+      @for (rating of ratings; track rating; let i = $index) {
+        <input
+          (click)="handleRating(i + 1)"
+          type="radio"
+          name="rating"
+          [value]="i"
+          [id]="rating"
+          />
+        <label [for]="rating">
+          <span>{{ i + 1 }} star</span>
+        </label>
+      }
+    </div>
+  </fieldset>
+}
